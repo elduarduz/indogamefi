@@ -8,7 +8,7 @@ aside#lefter {
     top: 0;
     left: 0;
     height: 100%; /* Tinggi penuh layar */
-    width: 15%; /* Sidebar 20% dari lebar layar */
+    width: 10%; /* Sidebar 20% dari lebar layar */
     overflow-y: auto;
 }
 
@@ -26,6 +26,7 @@ aside#lefter ul {
 
 aside#lefter li {
     margin: 0;
+    text-align: center; /* Menengahkan teks di dalam li */
 }
 
 aside#lefter a {

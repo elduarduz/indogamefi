@@ -50,7 +50,7 @@ body {
 main {
     width: 100%; /* Elemen utama memenuhi 100% sisa layar */
     height: 100%;
-    padding: 1rem;
+    padding: 5rem;
     background-color: #fff; /* Warna background opsional */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opsional untuk estetika */
 }
@@ -59,4 +59,13 @@ main {
 .main-container {
     display: flex;
     flex-wrap: nowrap; /* Tidak ada baris baru */
+}
+
+/* CMC */
+#coinmarketcap-widget-marquee {
+    position: absolute;  /* Menjadikan widget berada dalam posisi absolut */
+    right: 0%;          /* Mengatur widget 10% dari kanan */
+    width: 90%;          /* Menjadikan widget 80% dari lebar halaman */
+    top: 0;              /* Posisi widget dari atas halaman */
+    padding-top: 2.8%;
 }
