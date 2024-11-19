@@ -1,0 +1,62 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    color: #ffffff;
+}
+
+p {
+    line-height: 1.6;
+    margin: 0 0 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* Reset Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Pastikan body mencakup seluruh tinggi viewport */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Tata letak vertikal */
+    min-height: 100%;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    align-items: flex-start; /* Elemen mulai dari atas */
+}
+
+/* Main Section */
+main {
+    width: 100%; /* Elemen utama memenuhi 100% sisa layar */
+    height: 100%;
+    padding: 1rem;
+    background-color: #fff; /* Warna background opsional */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opsional untuk estetika */
+}
+
+/* Main Content */
+.main-container {
+    display: flex;
+    flex-wrap: nowrap; /* Tidak ada baris baru */
+}

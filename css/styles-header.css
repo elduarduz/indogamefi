@@ -1,0 +1,43 @@
+/* Header Styles */
+header {
+    background-color: #34495e;
+    color: #fff;
+    padding: 0rem 2rem;
+    position: sticky; /* Tambahkan properti sticky */
+    top: 0; /* Jarak dari atas viewport */
+    z-index: 1000; /* Pastikan tetap di atas elemen lain */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan agar terlihat elegan */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+#admin-login button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+#admin-login button:hover {
+    background-color: #2980b9;
+}

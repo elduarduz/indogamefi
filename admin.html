@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - SCN Media</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
+</head>
+<body>
+    <!-- Header with logo and title -->
+    <header>
+        <div class="logo">
+            <img src="images/scn_logo.png" alt="SCN Media Logo">
+            <h1>Admin Panel - SCN Media</h1>
+        </div>
+    </header>
+
+    <!-- Upload Form Section -->
+    <main>
+        <div class="form-container">
+            <h2>Upload New GameFi/Airdrop Information</h2>
+            <form id="upload-form">
+                <label for="title">Title:</label>
+                <input type="text" id="title" class="form-input" placeholder="Enter post title" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" class="form-input" rows="4" placeholder="Enter a brief description" required></textarea>
+
+                <label for="image">Image URL:</label>
+                <input type="text" id="image" class="form-input" placeholder="Link to image" required>
+
+                <label for="video">Video URL (optional):</label>
+                <input type="text" id="video" class="form-input" placeholder="Link to video">
+
+                <button type="submit" class="upload-btn">Upload Content</button>
+            </form>
+            <p id="status-message"></p>
+        </div>
+    </main>
+
+    <script>
+        // Firebase Configuration and Initialization
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Form Submission Logic
+        document.getElementById('upload-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const title = document.getElementById('title').value;
+            const description = document.getElementById('description').value;
+            const image = document.getElementById('image').value;
+            const video = document.getElementById('video').value;
+
+            // Add data to Firestore
+            db.collection("posts").add({
+                title: title,
+                description: description,
+                image: image,
+                video: video,
+                timestamp: new Date()
+            })
+            .then(() => {
+                document.getElementById('status-message').innerText = "Content uploaded successfully!";
+                document.getElementById('upload-form').reset();
+            })
+            .catch((error) => {
+                document.getElementById('status-message').innerText = "Error uploading content: " + error;
+            });
+        });
+    </script>
+</body>
+</html>
