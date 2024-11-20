@@ -2,11 +2,12 @@
 header {
     background-color: #34495e;
     color: #fff;
-    padding: 0rem 2rem;
-    position: sticky; /* Tambahkan properti sticky */
-    top: 0; /* Jarak dari atas viewport */
-    z-index: 1000; /* Pastikan tetap di atas elemen lain */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan agar terlihat elegan */
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: auto; /* Menyesuaikan tinggi header */
 }
 
 .header-container {
@@ -26,6 +27,7 @@ header {
     height: auto;
 }
 
+/* Admin Login Button */
 #admin-login button {
     background-color: #3498db;
     color: #fff;
@@ -39,5 +41,36 @@ header {
 }
 
 #admin-login button:hover {
+    background-color: #2980b9;
+}
+
+/* Search Panel */
+.search-panel {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search-panel input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.search-panel button {
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-panel button:hover {
     background-color: #2980b9;
 }

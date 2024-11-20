@@ -65,7 +65,7 @@ main {
 #coinmarketcap-widget-marquee {
     position: absolute;  /* Menjadikan widget berada dalam posisi absolut */
     right: 0%;          /* Mengatur widget 10% dari kanan */
-    width: 90%;          /* Menjadikan widget 80% dari lebar halaman */
+    width: 83.3%;          /* Menjadikan widget 80% dari lebar halaman */
     top: 0;              /* Posisi widget dari atas halaman */
     padding-top: 2.8%;
 }

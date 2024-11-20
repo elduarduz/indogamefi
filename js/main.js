@@ -37,5 +37,8 @@ function addWelcomeSectionToMain() {
 
 // Panggil fungsi untuk menambahkan sambutan
 addWelcomeSectionToMain();
-addWelcomeSectionToMain();addWelcomeSectionToMain();addWelcomeSectionToMain();addWelcomeSectionToMain();
-
+addWelcomeSectionToMain();
+addWelcomeSectionToMain();
+addWelcomeSectionToMain();
+addWelcomeSectionToMain();
+addWelcomeSectionToMain();
