@@ -6,7 +6,7 @@ aside#lefter {
     position: sticky;
     top: 0;
     width: 20%;
-    height: 110%; /* Tinggi maksimal hingga bawah viewport */
+    height: 100vh; /* Tinggi maksimal hingga bawah viewport */
     overflow-y: auto;
     z-index: 900;
 

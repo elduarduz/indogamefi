@@ -1,6 +1,4 @@
-// Fungsi untuk menambahkan sambutan di halaman
 function addWelcomeSectionToMain() {
-    // Cari elemen <main> di dalam HTML
     const mainElement = document.querySelector('main');
 
     if (!mainElement) {
@@ -9,18 +7,18 @@ function addWelcomeSectionToMain() {
     }
 
     // Buat elemen container sambutan
-    const welcomeSection = document.createElement('section');
-    welcomeSection.id = 'welcome-section';
-    welcomeSection.style.padding = '20px';
-    welcomeSection.style.backgroundColor = '#f9f9f9';
-    welcomeSection.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-    welcomeSection.style.borderRadius = '8px';
-    welcomeSection.style.marginBottom = '20px';
-    welcomeSection.style.marginLeft = '5%';  // Menambahkan margin-left 20%
-    welcomeSection.style.marginRight = '10%'; // Menambahkan margin-right 20%
+    const welcomeContainer = document.createElement('div');
+    welcomeContainer.style.display = 'flex'; // Gunakan flex untuk membuat dua kolom
+    welcomeContainer.style.gap = '20px'; // Jarak antar elemen di dalam flex container
 
-    // Isi konten sambutan
-    welcomeSection.innerHTML = `
+    // Elemen pertama (bagian besar) di kiri
+    const largeSection = document.createElement('section');
+    largeSection.style.flex = '1 1 55%';  // Membuat elemen besar mengambil 70% lebar
+    largeSection.style.padding = '20px';
+    largeSection.style.backgroundColor = '#f9f9f9';
+    largeSection.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+    largeSection.style.marginBottom = '20px';
+    largeSection.innerHTML = `
         <h2 style="margin-bottom: 10px; font-size: 1.5rem; color: #007bff;">Welcome to SCN Community!</h2>
         <p style="margin-bottom: 10px; font-size: 1rem; color: #333;">
             We are thrilled to have you here! SCN Community is your go-to hub for the latest updates in Airdrop and GameFi. 
@@ -31,14 +29,36 @@ function addWelcomeSectionToMain() {
         <a href="#" style="color: #28a745; text-decoration: none; font-size: 1rem;">Learn More</a>
     `;
 
+    // Container untuk elemen-elemen kecil di kanan
+    const smallSectionsContainer = document.createElement('div');
+    smallSectionsContainer.style.flex = '1 1 30%'; // Membuat kontainer sebelah kanan mengambil 30% lebar
+    smallSectionsContainer.style.display = 'flex';
+    smallSectionsContainer.style.flexDirection = 'column'; // Elemen-elemen kecil akan ditata secara vertikal
+    smallSectionsContainer.style.gap = '20px'; // Jarak antar elemen kecil
+
+    // Elemen kedua, ketiga, dan keempat (bagian kecil)
+    for (let i = 0; i < 3; i++) {
+        const smallSection = document.createElement('section');
+        smallSection.style.padding = '20px';
+        smallSection.style.backgroundColor = '#f9f9f9';
+        smallSection.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        smallSection.style.marginBottom = '20px';
+        smallSection.innerHTML = `
+            <h3 style="margin-bottom: 10px; font-size: 1.2rem; color: #007bff;">Section ${i + 1}</h3>
+            <p style="margin-bottom: 10px; font-size: 1rem; color: #333;">
+                This is a smaller section.
+            </p>
+        `;
+        smallSectionsContainer.appendChild(smallSection);
+    }
+
+    // Menambahkan elemen besar dan elemen kecil ke dalam container sambutan
+    welcomeContainer.appendChild(largeSection);
+    welcomeContainer.appendChild(smallSectionsContainer);
+
     // Tambahkan elemen ke dalam elemen <main>
-    mainElement.prepend(welcomeSection);
+    mainElement.prepend(welcomeContainer);
 }
 
 // Panggil fungsi untuk menambahkan sambutan
-addWelcomeSectionToMain();
-addWelcomeSectionToMain();
-addWelcomeSectionToMain();
-addWelcomeSectionToMain();
-addWelcomeSectionToMain();
 addWelcomeSectionToMain();
